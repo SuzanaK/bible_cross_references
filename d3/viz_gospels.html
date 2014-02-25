@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+  <head>
+	  <title>Cross References Between The 4 Gospels</title>
+	  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <style type="text/css">
+	    body {
+		  margin-top: 50px;
+		  margin-right: 70px;
+		  margin-bottom: 10px;
+		  margin-left: 70px;
+	    }
+
+      h1 {
+      font-family: sans-sarif;
+      color: steelblue;
+      }
+
+      div {
+      display: block;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0px;
+      margin-top: 100 px;
+      }
+    </style>
+
+  </head> 
+  <body>
+
+    <div>
+      <h1>Cross References Between The 4 Gospels</h1>
+    </div>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+data = [331, 388, 458, 181, 
+        463, 77, 310, 101, 
+        498, 325, 217, 170,
+        235, 99, 151, 632]
+
+labels = ["Matthew", "Marc", "Luke", "John"]
+offset_x = 160
+offset_y = 80
+
+var svgContainer = d3.select("div")
+  .append("svg")
+  .attr("width", 800)
+  .attr("height", 1000);
+
+var circles = svgContainer.selectAll("circle")
+  .data(data)
+  .enter()
+  .append("circle");
+
+var circleAttributes = circles
+  .attr("cx", function (d, i) { return offset_x + (i%4)*150; }) 
+  .attr("cy", function(d, i){ return offset_y + (Math.floor(i/4) *150) ;})
+  .attr("r", function (d) { return d/498*50; })
+  .style("fill", "turquoise")
+  .style("stroke", "steelblue")
+  .style("stroke-width", "1.5px")
+  .append("svg:title")
+   .text(function(d, i) { return d + " cross references from " + labels[i%4] + " to " + labels[(Math.floor(i/4))]; });
+   
+          var textlabel = svgContainer.selectAll(".text.ylabels")
+              .data(labels)
+              .enter().append("svg:text")
+                .text(function (d) { return d; })
+                .attr("x", offset_x - 60)
+                .attr("y", function (d, i) { return offset_y + i * 150; })
+                .style("text-anchor", "end")
+                .style("fill", "steelblue")
+                .style("font-family", "sans-serif")
+                //.attr("transform", "translate(-6," + gridSize / 1.5 + ")")
+
+          var textlabel = svgContainer.selectAll(".text.xlabels")
+              .data(labels)
+              .enter().append("svg:text")
+                .text(function (d) { return d; })
+                .attr("x", function (d, i) { return offset_x + 30 + i * 150; })
+                .attr("y", 650)
+                .style("text-anchor", "end")
+                .style("fill", "steelblue")
+                .style("font-family", "sans-serif")
+
+          var titel = svgContainer.selectAll(".text.titel")
+                .text("Cross References Between The Gospels")
+                .attr("x", 300)
+                .attr("y", 800)
+                //.style("text-anchor", "end")
+                .style("fill", "steelblue")
+                .style("font-family", "sans-serif")
+
+console.log(circles)
+
+</script>
