@@ -86,7 +86,7 @@ data = np.log(data) #natural log
 
 plt.figure(figsize=(4, 4), dpi=300)
 
-plt.imshow(data, interpolation='nearest', cmap=plt.cm.jet)
+plt.imshow(data, interpolation='nearest', cmap=plt.cm.PuBuGn)
 
 plt.xticks(range(66))
 plt.yticks(range(66))
