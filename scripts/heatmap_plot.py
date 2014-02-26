@@ -80,9 +80,9 @@ data = np.genfromtxt('../data/all_cross_refs_abs.csv', delimiter=';')
 data = np.log(data) #natural log 
 
 
-plt.figure(figsize=(4, 4), dpi=300)
+plt.figure(figsize=(4, 4), dpi=600)
 
-plt.imshow(data, interpolation='nearest', cmap=plt.cm.PuBuGn)
+plt.imshow(data, interpolation='nearest', cmap=plt.cm.cool)
 
 plt.xticks(range(66))
 plt.yticks(range(66))
