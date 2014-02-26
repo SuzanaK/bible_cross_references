@@ -1,10 +1,6 @@
 #!/usr/bin/env python 
 # -*- coding: utf-8 -*-
 
-from __future__ import division
-from collections import defaultdict
-import codecs
-
 import numpy as np
 import matplotlib.pyplot as plt
 
