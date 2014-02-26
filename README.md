@@ -9,3 +9,5 @@ be the number of cross references FROM Genesis TO Josua.
 
 The references are from the online version of the New World Translation (original version, not the 
 2014 revision) published by Jehovah's Witnesses on jw.org. 
+
+Plotting of the heatmap is done with matplotlib and numpy. 
