@@ -11,3 +11,6 @@ The references are from the online version of the New World Translation (origina
 2014 revision) published by Jehovah's Witnesses on jw.org. 
 
 Plotting of the heatmap is done with matplotlib and numpy. 
+
+
+![Heatmap Plot](plots/heatmap_bible_references_bluegreen.png)
